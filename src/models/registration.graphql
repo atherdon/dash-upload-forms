@@ -1,0 +1,5 @@
+mutation registration($data: RegistrationParams!) {
+  registration(data: $data) {
+    id
+  }
+}

@@ -1,0 +1,5 @@
+mutation postOneBrand($data: PostOneBrandParams!) {
+  postOneBrand(data: $data) {
+    id
+  }
+}
