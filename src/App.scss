@@ -1,0 +1,42 @@
+$margin: calc(15px + (50 - 15) * ((100vw - 320px) / (7680 - 320)));
+
+.error {
+  color: red;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: $margin;
+}
+
+.form {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.button {
+  margin: $margin;
+}
+
+.link {
+  text-decoration: none;
+  margin: 12px;
+}
+
+.selected {
+  text-decoration: underline;
+  margin: $margin;
+}
