@@ -1,0 +1,5 @@
+mutation postOneAppearance($data: PostOneAppearanceParams!) {
+    postOneAppearance(data: $data) {
+        id
+    }
+}

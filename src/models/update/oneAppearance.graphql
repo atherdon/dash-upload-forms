@@ -1,0 +1,6 @@
+mutation updateOneAppearance($where: GetOneAppearanceParams!, $data: UpdateOneAppearanceParams!) {
+    updateOneAppearance(where: $where, data: $data) {
+        id
+        search
+    }
+}

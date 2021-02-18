@@ -1,0 +1,5 @@
+mutation postOneExpandable($data: PostOneExpandableParams!) {
+    postOneExpandable(data: $data) {
+        id
+    }
+}

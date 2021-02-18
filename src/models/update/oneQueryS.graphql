@@ -1,0 +1,7 @@
+mutation updateOneQueryS($where: GetOneQuerySParams!, $data: UpdateOneQuerySParams!) {
+    updateOneQueryS(where: $where, data: $data) {
+        id
+        created
+        clicks
+    }
+}

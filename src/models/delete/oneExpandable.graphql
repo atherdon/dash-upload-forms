@@ -1,0 +1,6 @@
+mutation deleteOneExpandable($where: GetOneExpandableParams!) {
+    deleteOneExpandable(where: $where) {
+        id
+        created
+    }
+}

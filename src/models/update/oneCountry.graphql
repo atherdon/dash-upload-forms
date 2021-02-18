@@ -1,0 +1,7 @@
+mutation updateOneCountry($where: GetOneCountryParams!, $data: UpdateOneCountryParams!) {
+    updateOneCountry(where: $where, data: $data) {
+        id
+        created
+        clicks
+    }
+}

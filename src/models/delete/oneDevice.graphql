@@ -1,0 +1,6 @@
+mutation deleteOneDevice($where: GetOneDeviceParams!) {
+    deleteOneDevice(where: $where) {
+        id
+        created
+    }
+}

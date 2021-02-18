@@ -1,0 +1,6 @@
+mutation deleteOneCountry($where: GetOneCountryParams!) {
+    deleteOneCountry(where: $where) {
+        id
+        created
+    }
+}

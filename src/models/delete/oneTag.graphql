@@ -1,0 +1,6 @@
+mutation deleteOneTag($where: GetOneTagParams!) {
+    deleteOneTag(where: $where) {
+        id
+        created
+    }
+}

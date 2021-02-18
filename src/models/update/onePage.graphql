@@ -1,0 +1,7 @@
+mutation updateOnePage($where: GetOnePageParams!, $data: UpdateOnePageParams!) {
+    updateOnePage(where: $where, data: $data) {
+        id
+        created
+        clicks
+    }
+}

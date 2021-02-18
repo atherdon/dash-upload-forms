@@ -1,0 +1,5 @@
+mutation postOneDevice($data: PostOneDeviceParams!) {
+    postOneDevice(data: $data) {
+        id
+    }
+}

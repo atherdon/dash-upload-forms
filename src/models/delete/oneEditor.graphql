@@ -1,0 +1,6 @@
+mutation deleteOneEditor($where: GetOneEditorParams!) {
+    deleteOneEditor(where: $where) {
+        id
+        created
+    }
+}

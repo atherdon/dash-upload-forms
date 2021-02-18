@@ -1,0 +1,5 @@
+mutation postOnePage($data: PostOnePageParams!) {
+    postOnePage(data: $data) {
+        id
+    }
+}
