@@ -1,0 +1,6 @@
+mutation deleteOneClicksPosition($where: GetOneClicksPositionParams!) {
+    deleteOneClicksPosition(where: $where) {
+        id
+        created
+    }
+}

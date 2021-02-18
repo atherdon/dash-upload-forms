@@ -1,0 +1,6 @@
+mutation postOneArticle($data: PostOneArticleParams!) {
+    postOneArticle(data: $data) {
+        id
+        created
+    }
+}

@@ -1,0 +1,7 @@
+mutation updateOneFilter($where: GetOneFilterParams!, $data: UpdateOneFilterParams!) {
+    updateOneFilter(where: $where, data: $data) {
+        id
+        created
+        filter
+    }
+}

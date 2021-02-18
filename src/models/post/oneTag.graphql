@@ -1,0 +1,5 @@
+mutation postOneTag($data: PostOneTagParams!) {
+    postOneTag(data: $data) {
+        id
+    }
+}

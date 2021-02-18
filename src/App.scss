@@ -40,3 +40,13 @@ $margin: calc(15px + (50 - 15) * ((100vw - 320px) / (7680 - 320)));
   text-decoration: underline;
   margin: $margin;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}

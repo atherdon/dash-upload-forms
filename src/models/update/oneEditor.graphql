@@ -1,0 +1,6 @@
+mutation updateOneEditor($where: GetOneEditorParams!, $data: UpdateOneEditorParams!) {
+    updateOneEditor(where: $where, data: $data) {
+        id
+        created
+    }
+}

@@ -1,0 +1,5 @@
+mutation postOneQueryS($data: PostOneQuerySParams!) {
+    postOneQueryS(data: $data) {
+        id
+    }
+}

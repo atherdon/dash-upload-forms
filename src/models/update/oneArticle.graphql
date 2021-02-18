@@ -1,0 +1,7 @@
+mutation updateOneArticle($where: GetOneArticleParams!, $data: UpdateOneArticleParams!) {
+    updateOneArticle(where: $where, data: $data) {
+        id
+        created
+        url
+    }
+}

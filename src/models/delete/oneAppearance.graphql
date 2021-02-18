@@ -1,0 +1,6 @@
+mutation deleteOneAppearance($where: GetOneAppearanceParams!) {
+    deleteOneAppearance(where: $where) {
+        id
+        created
+    }
+}

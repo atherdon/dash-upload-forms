@@ -1,0 +1,6 @@
+mutation deleteOneQueryS($where: GetOneQuerySParams!) {
+    deleteOneQueryS(where: $where) {
+        id
+        created
+    }
+}

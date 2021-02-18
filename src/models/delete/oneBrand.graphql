@@ -1,0 +1,5 @@
+mutation deleteOneBrand($where: GetOneBrandParams!) {
+    deleteOneBrand(where: $where) {
+        id
+    }
+}

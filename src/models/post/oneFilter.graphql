@@ -1,0 +1,5 @@
+mutation postOneFilter($data: PostOneFilterParams!) {
+    postOneFilter(data: $data) {
+        id
+    }
+}

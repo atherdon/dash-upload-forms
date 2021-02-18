@@ -1,0 +1,6 @@
+mutation postOneEditor($data: PostOneEditorParams!) {
+    postOneEditor(data: $data) {
+        id
+        created
+    }
+}
