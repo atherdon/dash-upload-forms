@@ -1,0 +1,7 @@
+mutation updateOneDevice($where: GetOneDeviceParams!, $data: UpdateOneDeviceParams!) {
+    updateOneDevice(where: $where, data: $data) {
+        id
+        created
+        clicks
+    }
+}

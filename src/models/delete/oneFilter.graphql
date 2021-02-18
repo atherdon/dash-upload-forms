@@ -1,0 +1,6 @@
+mutation deleteOneFilter($where: GetOneFilterParams!) {
+    deleteOneFilter(where: $where) {
+        id
+        created
+    }
+}

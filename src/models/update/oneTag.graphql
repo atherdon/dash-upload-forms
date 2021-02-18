@@ -1,0 +1,7 @@
+mutation updateOneTag($where: GetOneTagParams!, $data: UpdateOneTagParams!) {
+    updateOneTag(where: $where, data: $data) {
+        id
+        created
+        count
+    }
+}

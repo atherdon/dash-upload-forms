@@ -1,0 +1,7 @@
+mutation updateOneBrand($where: GetOneBrandParams!, $data: UpdateOneBrandParams!) {
+    updateOneBrand(where: $where, data: $data) {
+        id
+        created
+        url
+    }
+}

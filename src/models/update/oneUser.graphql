@@ -1,0 +1,8 @@
+mutation updateOneUser($where: GetOneUserParams!, $data: UpdateOneUserParams!) {
+    updateOneUser(where: $where, data: $data) {
+        id
+        name
+        role
+        created
+    }
+}

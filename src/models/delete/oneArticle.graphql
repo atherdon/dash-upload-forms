@@ -1,0 +1,5 @@
+mutation deleteOneArticle($where: GetOneArticleParams!) {
+    deleteOneArticle(where: $where) {
+        id
+    }
+}

@@ -1,0 +1,6 @@
+mutation updateOneClicksPosition($where: GetOneClicksPositionParams!, $data: UpdateOneClicksPositionParams!) {
+    updateOneClicksPosition(where: $where, data: $data) {
+        id
+        ctr
+    }
+}

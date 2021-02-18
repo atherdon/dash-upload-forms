@@ -3,7 +3,7 @@ import * as React from 'react';
 import { configure } from 'react-apollo-form';
 import type { DocumentNode } from '@apollo/client';
 import client from '../clients/apollo';
-import theme from '../clients/themeForGenerated';
+import theme from '../themes/themeForGenerated';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsonSchema = require('../generatedForm/apollo-form-json-schema.json');
@@ -20,6 +20,10 @@ interface GeneratedFormProps {
   name: ApolloFormMutationNames;
 }
 
+/**
+ * Component generated bu 'react-apollo-form'
+ * @param props [GeneratedFormProps]
+ */
 const GeneratedForm = (props: GeneratedFormProps): React.ReactElement => {
   const { document, name } = props;
   return (

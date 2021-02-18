@@ -1,0 +1,6 @@
+mutation deleteOnePage($where: GetOnePageParams!) {
+    deleteOnePage(where: $where) {
+        id
+        created
+    }
+}

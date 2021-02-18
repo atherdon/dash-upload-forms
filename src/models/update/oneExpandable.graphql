@@ -1,0 +1,6 @@
+mutation updateOneExpandable($where: GetOneExpandableParams!, $data: UpdateOneExpandableParams!) {
+    updateOneExpandable(where: $where, data: $data) {
+        id
+        name
+    }
+}

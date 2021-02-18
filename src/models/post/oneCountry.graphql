@@ -1,0 +1,5 @@
+mutation postOneCountry($data: PostOneCountryParams!) {
+    postOneCountry(data: $data) {
+        id
+    }
+}

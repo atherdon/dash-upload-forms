@@ -1,0 +1,6 @@
+mutation deleteOneUser($where: GetOneUserParams!) {
+    deleteOneUser(where: $where) {
+        id
+        created
+    }
+}
