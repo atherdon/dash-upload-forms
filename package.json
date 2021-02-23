@@ -21,7 +21,7 @@
     "react-apollo-form": "0.1.8",
     "react-dom": "17.0.1",
     "react-router-dom": "5.2.0",
-    "react-scripts": "4.0.2",
+    "react-scripts": "4.0.3",
     "sass": "1.32.8",
     "semantic-ui-react": "2.0.3",
     "typescript": "4.1.5",
