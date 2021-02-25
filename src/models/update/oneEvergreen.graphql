@@ -1,0 +1,7 @@
+mutation updateOneEvergreen($where: GetOneEvergreenParams!, $data: UpdateOneEvergreenParams!) {
+    updateOneEvergreen(where: $where, data: $data) {
+        id
+        created
+        url
+    }
+}

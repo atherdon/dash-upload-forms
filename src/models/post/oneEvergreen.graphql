@@ -1,0 +1,5 @@
+mutation postOneEvergreen($data: PostOneEvergreenParams!) {
+  postOneEvergreen(data: $data) {
+    id
+  }
+}
