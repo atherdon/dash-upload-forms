@@ -3,7 +3,7 @@ import { loader } from 'graphql.macro';
 
 // Post schemas
 export const topAuthorSchema: DocumentNode = loader('../models/post/oneTopAuthor.graphql');
-export const brandSchema: DocumentNode = loader('../models/post/oneBrand.graphql');
+export const evergreenSchema: DocumentNode = loader('../models/post/oneEvergreen.graphql');
 export const articleSchema: DocumentNode = loader('../models/post/oneArticle.graphql');
 export const editorSchema: DocumentNode = loader('../models/post/oneEditor.graphql');
 export const expandableSchema: DocumentNode = loader('../models/post/oneExpandable.graphql');
@@ -19,7 +19,7 @@ export const pageSchema: DocumentNode = loader('../models/post/onePage.graphql')
 // Update schemas
 export const pageUpdateSchema: DocumentNode = loader('../models/update/onePage.graphql');
 export const topAuthorUpdateSchema: DocumentNode = loader('../models/update/oneTopAuthor.graphql');
-export const brandUpdateSchema: DocumentNode = loader('../models/update/oneBrand.graphql');
+export const evergreenUpdateSchema: DocumentNode = loader('../models/update/oneEvergreen.graphql');
 export const articleUpdateSchema: DocumentNode = loader('../models/update/oneArticle.graphql');
 export const editorUpdateSchema: DocumentNode = loader('../models/update/oneEditor.graphql');
 export const expandableUpdateSchema: DocumentNode = loader(
@@ -40,7 +40,7 @@ export const querySUpdateSchema: DocumentNode = loader('../models/update/oneQuer
 // Delete schemas
 export const filterDeleteSchema: DocumentNode = loader('../models/delete/oneFilter.graphql');
 export const topAuthorDeleteSchema: DocumentNode = loader('../models/delete/oneTopAuthor.graphql');
-export const brandDeleteSchema: DocumentNode = loader('../models/delete/oneBrand.graphql');
+export const evergreenDeleteSchema: DocumentNode = loader('../models/delete/oneEvergreen.graphql');
 export const articleDeleteSchema: DocumentNode = loader('../models/delete/oneArticle.graphql');
 export const editorDeleteSchema: DocumentNode = loader('../models/delete/oneEditor.graphql');
 export const expandableDeleteSchema: DocumentNode = loader(
@@ -60,7 +60,7 @@ export const pageDeleteSchema: DocumentNode = loader('../models/delete/onePage.g
 
 // Post names
 export const TOP_AUTHOR = 'postOneTopAuthor';
-export const BRAND = 'postOneBrand';
+export const EVERGREEN = 'postOneEvergreen';
 export const ARTICLE = 'postOneArticle';
 export const EDITOR = 'postOneEditor';
 export const EXPANDABLE = 'postOneExpandable';
@@ -76,7 +76,7 @@ export const PAGE = 'postOnePage';
 // Update names
 export const PAGE_UPDATE = 'updateOnePage';
 export const TOP_AUTHOR_UPDATE = 'updateOneTopAuthor';
-export const BRAND_UPDATE = 'updateOneBrand';
+export const EVERGREEN_UPDATE = 'updateOneEvergreen';
 export const ARTICLE_UPDATE = 'updateOneArticle';
 export const EDITOR_UPDATE = 'updateOneEditor';
 export const EXPANDABLE_UPDATE = 'updateOneExpandable';
@@ -91,7 +91,7 @@ export const QUERY_S_UPDATE = 'updateOneQueryS';
 // Delete names
 export const FILTER_DELETE = 'deleteOneFilter';
 export const TOP_AUTHOR_DELETE = 'deleteOneTopAuthor';
-export const BRAND_DELETE = 'deleteOneBrand';
+export const EVERGREEN_DELETE = 'deleteOneEvergreen';
 export const ARTICLE_DELETE = 'deleteOneArticle';
 export const EDITOR_DELETE = 'deleteOneEditor';
 export const EXPANDABLE_DELETE = 'deleteOneExpandable';

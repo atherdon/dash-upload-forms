@@ -24,20 +24,20 @@ const TopAuthorDelete = () => (
   </div>
 );
 
-// Brand
-const Brand = () => (
+// Evergreen
+const Evergreen = () => (
   <div className="form">
-    <GeneratedForm name={s.BRAND} document={s.brandSchema} />
+    <GeneratedForm name={s.EVERGREEN} document={s.evergreenSchema} />
   </div>
 );
-const BrandUpdate = () => (
+const EvergreenUpdate = () => (
   <div className="form">
-    <GeneratedForm name={s.BRAND_UPDATE} document={s.brandUpdateSchema} />
+    <GeneratedForm name={s.EVERGREEN_UPDATE} document={s.evergreenUpdateSchema} />
   </div>
 );
-const BrandDelete = () => (
+const EvergreenDelete = () => (
   <div className="form">
-    <GeneratedForm name={s.BRAND_DELETE} document={s.brandDeleteSchema} />
+    <GeneratedForm name={s.EVERGREEN_DELETE} document={s.evergreenDeleteSchema} />
   </div>
 );
 
@@ -311,8 +311,8 @@ function App(): React.ReactElement {
               <Link className={linkCls(location, s.TOP_AUTHOR)} to={`/${s.TOP_AUTHOR}`}>
                 {s.TOP_AUTHOR}
               </Link>
-              <Link className={linkCls(location, s.BRAND)} to={`/${s.BRAND}`}>
-                {s.BRAND}
+              <Link className={linkCls(location, s.EVERGREEN)} to={`/${s.EVERGREEN}`}>
+                {s.EVERGREEN}
               </Link>
               <Link className={linkCls(location, s.ARTICLE)} to={`/${s.ARTICLE}`}>
                 {s.ARTICLE}
@@ -358,8 +358,8 @@ function App(): React.ReactElement {
                 to={`/${s.TOP_AUTHOR_UPDATE}`}>
                 {s.TOP_AUTHOR_UPDATE}
               </Link>
-              <Link className={linkCls(location, s.BRAND_UPDATE)} to={`/${s.BRAND_UPDATE}`}>
-                {s.BRAND_UPDATE}
+              <Link className={linkCls(location, s.EVERGREEN_UPDATE)} to={`/${s.EVERGREEN_UPDATE}`}>
+                {s.EVERGREEN_UPDATE}
               </Link>
               <Link className={linkCls(location, s.ARTICLE_UPDATE)} to={`/${s.ARTICLE_UPDATE}`}>
                 {s.ARTICLE_UPDATE}
@@ -414,8 +414,8 @@ function App(): React.ReactElement {
                 to={`/${s.TOP_AUTHOR_DELETE}`}>
                 {s.TOP_AUTHOR_DELETE}
               </Link>
-              <Link className={linkCls(location, s.BRAND_DELETE)} to={`/${s.BRAND_DELETE}`}>
-                {s.BRAND_DELETE}
+              <Link className={linkCls(location, s.EVERGREEN_DELETE)} to={`/${s.EVERGREEN_DELETE}`}>
+                {s.EVERGREEN_DELETE}
               </Link>
               <Link className={linkCls(location, s.ARTICLE_DELETE)} to={`/${s.ARTICLE_DELETE}`}>
                 {s.ARTICLE_DELETE}
@@ -464,7 +464,7 @@ function App(): React.ReactElement {
         <Switch>
           {/** Post routes */}
           <Route path={`/${s.TOP_AUTHOR}`} component={TopAuthor} />
-          <Route path={`/${s.BRAND}`} component={Brand} />
+          <Route path={`/${s.EVERGREEN}`} component={Evergreen} />
           <Route path={`/${s.ARTICLE}`} component={Article} />
           <Route path={`/${s.EDITOR}`} component={Editor} />
           <Route path={`/${s.EXPANDABLE}`} component={Expandable} />
@@ -478,7 +478,7 @@ function App(): React.ReactElement {
           <Route path={`/${s.PAGE}`} component={Page} />
           {/** Update routes */}
           <Route path={`/${s.TOP_AUTHOR_UPDATE}`} component={TopAuthorUpdate} />
-          <Route path={`/${s.BRAND_UPDATE}`} component={BrandUpdate} />
+          <Route path={`/${s.EVERGREEN_UPDATE}`} component={EvergreenUpdate} />
           <Route path={`/${s.ARTICLE_UPDATE}`} component={ArticleUpdate} />
           <Route path={`/${s.EDITOR_UPDATE}`} component={EditorUpdate} />
           <Route path={`/${s.EXPANDABLE_UPDATE}`} component={ExpandableUpdate} />
@@ -493,7 +493,7 @@ function App(): React.ReactElement {
           <Route path={`/${s.FILTER_DELETE}`} component={FilterDelete} />
           {/** Delete routes */}
           <Route path={`/${s.TOP_AUTHOR_DELETE}`} component={TopAuthorDelete} />
-          <Route path={`/${s.BRAND_DELETE}`} component={BrandDelete} />
+          <Route path={`/${s.EVERGREEN_DELETE}`} component={EvergreenDelete} />
           <Route path={`/${s.ARTICLE_DELETE}`} component={ArticleDelete} />
           <Route path={`/${s.EDITOR_DELETE}`} component={EditorDelete} />
           <Route path={`/${s.EXPANDABLE_DELETE}`} component={ExpandableDelete} />
