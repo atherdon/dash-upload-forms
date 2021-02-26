@@ -58,6 +58,23 @@ const ArticleDelete = () => (
   </div>
 );
 
+// Edited
+const Edited = () => (
+  <div className="form">
+    <GeneratedForm name={s.EDITED} document={s.editedSchema} />
+  </div>
+);
+const EditedUpdate = () => (
+  <div className="form">
+    <GeneratedForm name={s.EDITED_UPDATE} document={s.editedUpdateSchema} />
+  </div>
+);
+const EditedDelete = () => (
+  <div className="form">
+    <GeneratedForm name={s.EDITED_DELETE} document={s.editedDeleteSchema} />
+  </div>
+);
+
 // Editor
 const Editor = () => (
   <div className="form">
@@ -317,6 +334,9 @@ function App(): React.ReactElement {
               <Link className={linkCls(location, s.ARTICLE)} to={`/${s.ARTICLE}`}>
                 {s.ARTICLE}
               </Link>
+              <Link className={linkCls(location, s.EDITED)} to={`/${s.EDITED}`}>
+                {s.EDITED}
+              </Link>
               <Link className={linkCls(location, s.EDITOR)} to={`/${s.EDITOR}`}>
                 {s.EDITOR}
               </Link>
@@ -363,6 +383,9 @@ function App(): React.ReactElement {
               </Link>
               <Link className={linkCls(location, s.ARTICLE_UPDATE)} to={`/${s.ARTICLE_UPDATE}`}>
                 {s.ARTICLE_UPDATE}
+              </Link>
+              <Link className={linkCls(location, s.EDITED_UPDATE)} to={`/${s.EDITED_UPDATE}`}>
+                {s.EDITED_UPDATE}
               </Link>
               <Link className={linkCls(location, s.EDITOR_UPDATE)} to={`/${s.EDITOR_UPDATE}`}>
                 {s.EDITOR_UPDATE}
@@ -420,6 +443,9 @@ function App(): React.ReactElement {
               <Link className={linkCls(location, s.ARTICLE_DELETE)} to={`/${s.ARTICLE_DELETE}`}>
                 {s.ARTICLE_DELETE}
               </Link>
+              <Link className={linkCls(location, s.EDITED_DELETE)} to={`/${s.EDITED_DELETE}`}>
+                {s.EDITED_DELETE}
+              </Link>
               <Link className={linkCls(location, s.EDITOR_DELETE)} to={`/${s.EDITOR_DELETE}`}>
                 {s.EDITOR_DELETE}
               </Link>
@@ -466,6 +492,7 @@ function App(): React.ReactElement {
           <Route path={`/${s.TOP_AUTHOR}`} component={TopAuthor} />
           <Route path={`/${s.EVERGREEN}`} component={Evergreen} />
           <Route path={`/${s.ARTICLE}`} component={Article} />
+          <Route path={`/${s.EDITED}`} component={Edited} />
           <Route path={`/${s.EDITOR}`} component={Editor} />
           <Route path={`/${s.EXPANDABLE}`} component={Expandable} />
           <Route path={`/${s.APPEARANCE}`} component={Appearance} />
@@ -480,6 +507,7 @@ function App(): React.ReactElement {
           <Route path={`/${s.TOP_AUTHOR_UPDATE}`} component={TopAuthorUpdate} />
           <Route path={`/${s.EVERGREEN_UPDATE}`} component={EvergreenUpdate} />
           <Route path={`/${s.ARTICLE_UPDATE}`} component={ArticleUpdate} />
+          <Route path={`/${s.EDITED_UPDATE}`} component={EditedUpdate} />
           <Route path={`/${s.EDITOR_UPDATE}`} component={EditorUpdate} />
           <Route path={`/${s.EXPANDABLE_UPDATE}`} component={ExpandableUpdate} />
           <Route path={`/${s.APPEARANCE_UPDATE}`} component={AppearanceUpdate} />
@@ -495,7 +523,8 @@ function App(): React.ReactElement {
           <Route path={`/${s.TOP_AUTHOR_DELETE}`} component={TopAuthorDelete} />
           <Route path={`/${s.EVERGREEN_DELETE}`} component={EvergreenDelete} />
           <Route path={`/${s.ARTICLE_DELETE}`} component={ArticleDelete} />
-          <Route path={`/${s.EDITOR_DELETE}`} component={EditorDelete} />
+          <Route path={`/${s.EDITED_DELETE}`} component={EditorDelete} />
+          <Route path={`/${s.EDITOR_DELETE}`} component={EditedDelete} />
           <Route path={`/${s.EXPANDABLE_DELETE}`} component={ExpandableDelete} />
           <Route path={`/${s.APPEARANCE_DELETE}`} component={AppearanceDelete} />
           <Route path={`/${s.CLICKS_POSITION_DELETE}`} component={ClicksPositionDelete} />
