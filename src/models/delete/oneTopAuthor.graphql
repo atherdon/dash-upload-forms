@@ -1,5 +1,0 @@
-mutation deleteOneTopAuthor($where: GetOneTopAuthorParams!) {
-    deleteOneTopAuthor(where: $where) {
-        id
-    }
-}

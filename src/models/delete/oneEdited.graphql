@@ -1,5 +1,0 @@
-mutation deleteOneEdited($where: GetOneEditedParams!) {
-    deleteOneEdited(where: $where) {
-        id
-    }
-}

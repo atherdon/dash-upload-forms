@@ -1,6 +1,0 @@
-mutation postOneTopAuthor($data: PostOneTopAuthorParams!) {
-    postOneTopAuthor(data: $data) {
-        id
-        created
-    }
-}

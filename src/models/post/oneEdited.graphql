@@ -1,6 +1,0 @@
-mutation postOneEdited($data: PostOneEditedParams!) {
-    postOneEdited(data: $data) {
-        id
-        created
-    }
-}

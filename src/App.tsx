@@ -7,41 +7,7 @@ import GeneratedForm from './components/GeneratedForm';
 import './App.scss';
 import * as s from './schema';
 
-// Top author
-const TopAuthor = () => (
-  <div className="form">
-    <GeneratedForm name={s.TOP_AUTHOR} document={s.topAuthorSchema} />
-  </div>
-);
-const TopAuthorUpdate = () => (
-  <div className="form">
-    <GeneratedForm name={s.TOP_AUTHOR_UPDATE} document={s.topAuthorUpdateSchema} />
-  </div>
-);
-const TopAuthorDelete = () => (
-  <div className="form">
-    <GeneratedForm name={s.TOP_AUTHOR_DELETE} document={s.topAuthorDeleteSchema} />
-  </div>
-);
-
-// Evergreen
-const Evergreen = () => (
-  <div className="form">
-    <GeneratedForm name={s.EVERGREEN} document={s.evergreenSchema} />
-  </div>
-);
-const EvergreenUpdate = () => (
-  <div className="form">
-    <GeneratedForm name={s.EVERGREEN_UPDATE} document={s.evergreenUpdateSchema} />
-  </div>
-);
-const EvergreenDelete = () => (
-  <div className="form">
-    <GeneratedForm name={s.EVERGREEN_DELETE} document={s.evergreenDeleteSchema} />
-  </div>
-);
-
-// Article
+// Article TODO rewrite to hooks
 const Article = () => (
   <div className="form">
     <GeneratedForm name={s.ARTICLE} document={s.articleSchema} />
@@ -55,23 +21,6 @@ const ArticleUpdate = () => (
 const ArticleDelete = () => (
   <div className="form">
     <GeneratedForm name={s.ARTICLE_DELETE} document={s.articleDeleteSchema} />
-  </div>
-);
-
-// Edited
-const Edited = () => (
-  <div className="form">
-    <GeneratedForm name={s.EDITED} document={s.editedSchema} />
-  </div>
-);
-const EditedUpdate = () => (
-  <div className="form">
-    <GeneratedForm name={s.EDITED_UPDATE} document={s.editedUpdateSchema} />
-  </div>
-);
-const EditedDelete = () => (
-  <div className="form">
-    <GeneratedForm name={s.EDITED_DELETE} document={s.editedDeleteSchema} />
   </div>
 );
 
@@ -325,17 +274,8 @@ function App(): React.ReactElement {
           </div>
           {tabType === 'post' ? (
             <section className="col">
-              <Link className={linkCls(location, s.TOP_AUTHOR)} to={`/${s.TOP_AUTHOR}`}>
-                {s.TOP_AUTHOR}
-              </Link>
-              <Link className={linkCls(location, s.EVERGREEN)} to={`/${s.EVERGREEN}`}>
-                {s.EVERGREEN}
-              </Link>
               <Link className={linkCls(location, s.ARTICLE)} to={`/${s.ARTICLE}`}>
                 {s.ARTICLE}
-              </Link>
-              <Link className={linkCls(location, s.EDITED)} to={`/${s.EDITED}`}>
-                {s.EDITED}
               </Link>
               <Link className={linkCls(location, s.EDITOR)} to={`/${s.EDITOR}`}>
                 {s.EDITOR}
@@ -373,19 +313,8 @@ function App(): React.ReactElement {
           )}
           {tabType === 'update' ? (
             <section className="col">
-              <Link
-                className={linkCls(location, s.TOP_AUTHOR_UPDATE)}
-                to={`/${s.TOP_AUTHOR_UPDATE}`}>
-                {s.TOP_AUTHOR_UPDATE}
-              </Link>
-              <Link className={linkCls(location, s.EVERGREEN_UPDATE)} to={`/${s.EVERGREEN_UPDATE}`}>
-                {s.EVERGREEN_UPDATE}
-              </Link>
               <Link className={linkCls(location, s.ARTICLE_UPDATE)} to={`/${s.ARTICLE_UPDATE}`}>
                 {s.ARTICLE_UPDATE}
-              </Link>
-              <Link className={linkCls(location, s.EDITED_UPDATE)} to={`/${s.EDITED_UPDATE}`}>
-                {s.EDITED_UPDATE}
               </Link>
               <Link className={linkCls(location, s.EDITOR_UPDATE)} to={`/${s.EDITOR_UPDATE}`}>
                 {s.EDITOR_UPDATE}
@@ -432,19 +361,8 @@ function App(): React.ReactElement {
           )}
           {tabType === 'delete' ? (
             <section className="col">
-              <Link
-                className={linkCls(location, s.TOP_AUTHOR_DELETE)}
-                to={`/${s.TOP_AUTHOR_DELETE}`}>
-                {s.TOP_AUTHOR_DELETE}
-              </Link>
-              <Link className={linkCls(location, s.EVERGREEN_DELETE)} to={`/${s.EVERGREEN_DELETE}`}>
-                {s.EVERGREEN_DELETE}
-              </Link>
               <Link className={linkCls(location, s.ARTICLE_DELETE)} to={`/${s.ARTICLE_DELETE}`}>
                 {s.ARTICLE_DELETE}
-              </Link>
-              <Link className={linkCls(location, s.EDITED_DELETE)} to={`/${s.EDITED_DELETE}`}>
-                {s.EDITED_DELETE}
               </Link>
               <Link className={linkCls(location, s.EDITOR_DELETE)} to={`/${s.EDITOR_DELETE}`}>
                 {s.EDITOR_DELETE}
@@ -489,10 +407,7 @@ function App(): React.ReactElement {
         </Menu>
         <Switch>
           {/** Post routes */}
-          <Route path={`/${s.TOP_AUTHOR}`} component={TopAuthor} />
-          <Route path={`/${s.EVERGREEN}`} component={Evergreen} />
           <Route path={`/${s.ARTICLE}`} component={Article} />
-          <Route path={`/${s.EDITED}`} component={Edited} />
           <Route path={`/${s.EDITOR}`} component={Editor} />
           <Route path={`/${s.EXPANDABLE}`} component={Expandable} />
           <Route path={`/${s.APPEARANCE}`} component={Appearance} />
@@ -504,10 +419,7 @@ function App(): React.ReactElement {
           <Route path={`/${s.QUERY_S}`} component={QueryS} />
           <Route path={`/${s.PAGE}`} component={Page} />
           {/** Update routes */}
-          <Route path={`/${s.TOP_AUTHOR_UPDATE}`} component={TopAuthorUpdate} />
-          <Route path={`/${s.EVERGREEN_UPDATE}`} component={EvergreenUpdate} />
           <Route path={`/${s.ARTICLE_UPDATE}`} component={ArticleUpdate} />
-          <Route path={`/${s.EDITED_UPDATE}`} component={EditedUpdate} />
           <Route path={`/${s.EDITOR_UPDATE}`} component={EditorUpdate} />
           <Route path={`/${s.EXPANDABLE_UPDATE}`} component={ExpandableUpdate} />
           <Route path={`/${s.APPEARANCE_UPDATE}`} component={AppearanceUpdate} />
@@ -520,11 +432,8 @@ function App(): React.ReactElement {
           <Route path={`/${s.PAGE_UPDATE}`} component={PageUpdate} />
           <Route path={`/${s.FILTER_DELETE}`} component={FilterDelete} />
           {/** Delete routes */}
-          <Route path={`/${s.TOP_AUTHOR_DELETE}`} component={TopAuthorDelete} />
-          <Route path={`/${s.EVERGREEN_DELETE}`} component={EvergreenDelete} />
           <Route path={`/${s.ARTICLE_DELETE}`} component={ArticleDelete} />
-          <Route path={`/${s.EDITED_DELETE}`} component={EditorDelete} />
-          <Route path={`/${s.EDITOR_DELETE}`} component={EditedDelete} />
+          <Route path={`/${s.EDITOR_DELETE}`} component={EditorDelete} />
           <Route path={`/${s.EXPANDABLE_DELETE}`} component={ExpandableDelete} />
           <Route path={`/${s.APPEARANCE_DELETE}`} component={AppearanceDelete} />
           <Route path={`/${s.CLICKS_POSITION_DELETE}`} component={ClicksPositionDelete} />
