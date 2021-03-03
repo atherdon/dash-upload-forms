@@ -1,5 +1,0 @@
-mutation deleteOneEvergreen($where: GetOneEvergreenParams!) {
-    deleteOneEvergreen(where: $where) {
-        id
-    }
-}

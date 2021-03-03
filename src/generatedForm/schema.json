@@ -10,6 +10,65 @@
       "subscriptionType": null,
       "types": [
         {
+          "kind": "SCALAR",
+          "name": "DateTime",
+          "description": "A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "PaginationParams",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "current",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "limit",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Int",
+          "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
           "kind": "OBJECT",
           "name": "User",
           "description": null,
@@ -190,16 +249,6 @@
         },
         {
           "kind": "SCALAR",
-          "name": "Int",
-          "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
           "name": "String",
           "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
           "fields": null,
@@ -230,7 +279,7 @@
               "deprecationReason": null
             },
             {
-              "name": "v",
+              "name": "ready",
               "description": null,
               "args": [],
               "type": {
@@ -238,7 +287,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "Boolean",
                   "ofType": null
                 }
               },
@@ -262,7 +311,7 @@
               "deprecationReason": null
             },
             {
-              "name": "email",
+              "name": "type",
               "description": null,
               "args": [],
               "type": {
@@ -286,7 +335,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "Boolean",
                   "ofType": null
                 }
               },
@@ -302,7 +351,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -346,13 +395,9 @@
               "description": null,
               "args": [],
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -362,13 +407,9 @@
               "description": null,
               "args": [],
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -382,7 +423,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -398,8 +439,28 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "tags",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
                 }
               },
               "isDeprecated": false,
@@ -408,6 +469,16 @@
           ],
           "inputFields": null,
           "interfaces": [],
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Boolean",
+          "description": "The `Boolean` scalar type represents `true` or `false`.",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
         },
@@ -456,7 +527,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "Edited",
+          "name": "ArticleTag",
           "description": null,
           "fields": [
             {
@@ -476,7 +547,7 @@
               "deprecationReason": null
             },
             {
-              "name": "v",
+              "name": "tagId",
               "description": null,
               "args": [],
               "type": {
@@ -484,7 +555,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "Int",
                   "ofType": null
                 }
               },
@@ -492,7 +563,7 @@
               "deprecationReason": null
             },
             {
-              "name": "url",
+              "name": "articleId",
               "description": null,
               "args": [],
               "type": {
@@ -500,7 +571,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "Int",
                   "ofType": null
                 }
               },
@@ -508,15 +579,15 @@
               "deprecationReason": null
             },
             {
-              "name": "email",
+              "name": "Tag",
               "description": null,
               "args": [],
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
+                  "kind": "OBJECT",
+                  "name": "Tag",
                   "ofType": null
                 }
               },
@@ -524,95 +595,15 @@
               "deprecationReason": null
             },
             {
-              "name": "isPublished",
+              "name": "Article",
               "description": null,
               "args": [],
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
+                  "kind": "OBJECT",
+                  "name": "Article",
                   "ofType": null
                 }
               },
@@ -628,7 +619,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -644,7 +635,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -659,7 +650,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "EditedMany",
+          "name": "ArticleTagMany",
           "description": null,
           "fields": [
             {
@@ -687,7 +678,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "Edited",
+                  "name": "ArticleTag",
                   "ofType": null
                 }
               },
@@ -762,7 +753,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -778,499 +769,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "Evergreen",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "v",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "url",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "created",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "updated",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "EvergreenMany",
-          "description": null,
-          "fields": [
-            {
-              "name": "count",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "items",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Evergreen",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "TopAuthor",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "v",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "url",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "created",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "updated",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "TopAuthorMany",
-          "description": null,
-          "fields": [
-            {
-              "name": "count",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "items",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "TopAuthor",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1425,7 +924,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1441,7 +940,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1552,7 +1051,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1568,7 +1067,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1691,7 +1190,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1707,7 +1206,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1840,7 +1339,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1856,7 +1355,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1979,7 +1478,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -1995,7 +1494,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2118,7 +1617,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2134,7 +1633,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2257,7 +1756,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2273,7 +1772,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2396,7 +1895,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2412,7 +1911,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2503,7 +2002,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2519,7 +2018,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2712,12 +2211,12 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "PostOneArticleParams",
+          "name": "GetManyArticleParams",
           "description": null,
           "fields": null,
           "inputFields": [
             {
-              "name": "v",
+              "name": "type",
               "description": null,
               "type": {
                 "kind": "NON_NULL",
@@ -2727,6 +2226,47 @@
                   "name": "String",
                   "ofType": null
                 }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "isPublished",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "pagination",
+              "description": null,
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "PaginationParams",
+                "ofType": null
+              },
+              "defaultValue": null
+            }
+          ],
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "PostOneArticleParams",
+          "description": null,
+          "fields": null,
+          "inputFields": [
+            {
+              "name": "ready",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
               },
               "defaultValue": null
             },
@@ -2745,7 +2285,7 @@
               "defaultValue": null
             },
             {
-              "name": "email",
+              "name": "type",
               "description": null,
               "type": {
                 "kind": "NON_NULL",
@@ -2762,13 +2302,9 @@
               "name": "isPublished",
               "description": null,
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
               },
               "defaultValue": null
             },
@@ -2780,7 +2316,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2794,7 +2330,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2808,7 +2344,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "DateTime",
                   "ofType": null
                 }
               },
@@ -2818,13 +2354,9 @@
               "name": "avgTimeStory",
               "description": null,
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
               },
               "defaultValue": null
             },
@@ -2832,13 +2364,9 @@
               "name": "avgAllTimeStory",
               "description": null,
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
               },
               "defaultValue": null
             }
@@ -2879,11 +2407,11 @@
           "fields": null,
           "inputFields": [
             {
-              "name": "v",
+              "name": "ready",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Boolean",
                 "ofType": null
               },
               "defaultValue": null
@@ -2899,7 +2427,7 @@
               "defaultValue": null
             },
             {
-              "name": "email",
+              "name": "type",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -2913,7 +2441,7 @@
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Boolean",
                 "ofType": null
               },
               "defaultValue": null
@@ -2923,7 +2451,7 @@
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "DateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -2933,7 +2461,7 @@
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "DateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -2943,7 +2471,7 @@
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "DateTime",
                 "ofType": null
               },
               "defaultValue": null
@@ -2953,7 +2481,7 @@
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -2963,7 +2491,7 @@
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -2975,131 +2503,33 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "PostOneEditedParams",
+          "name": "PostOneArticleTagParams",
           "description": null,
           "fields": null,
           "inputFields": [
             {
-              "name": "v",
+              "name": "tagId",
               "description": null,
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
+                  "name": "Int",
                   "ofType": null
                 }
               },
               "defaultValue": null
             },
             {
-              "name": "url",
+              "name": "articleId",
               "description": null,
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
                   "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
+                  "name": "Int",
                   "ofType": null
                 }
               },
@@ -3112,7 +2542,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "GetOneEditedParams",
+          "name": "GetOneArticleTagParams",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -3137,12 +2567,46 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "UpdateOneEditedParams",
+          "name": "GetManyArticleTagParams",
           "description": null,
           "fields": null,
           "inputFields": [
             {
-              "name": "v",
+              "name": "type",
+              "description": null,
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "articleId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "tagId",
+              "description": null,
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "word",
               "description": null,
               "type": {
                 "kind": "SCALAR",
@@ -3152,81 +2616,11 @@
               "defaultValue": null
             },
             {
-              "name": "url",
+              "name": "pagination",
               "description": null,
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "kind": "INPUT_OBJECT",
+                "name": "PaginationParams",
                 "ofType": null
               },
               "defaultValue": null
@@ -3238,521 +2632,26 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "PostOneEvergreenParams",
+          "name": "UpdateOneArticleTagParams",
           "description": null,
           "fields": null,
           "inputFields": [
             {
-              "name": "v",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "url",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "GetOneEvergreenParams",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "UpdateOneEvergreenParams",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "v",
+              "name": "tagId",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
             },
             {
-              "name": "url",
+              "name": "articleId",
               "description": null,
               "type": {
                 "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "PostOneTopAuthorParams",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "v",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "url",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "GetOneTopAuthorParams",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "id",
-              "description": null,
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                }
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
-          "name": "UpdateOneTopAuthorParams",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "v",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "url",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "email",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "isPublished",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "added",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "edited",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "published",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgTimeStory",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
-              "name": "avgAllTimeStory",
-              "description": null,
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
+                "name": "Int",
                 "ofType": null
               },
               "defaultValue": null
@@ -5352,7 +4251,22 @@
             {
               "name": "getManyArticle",
               "description": null,
-              "args": [],
+              "args": [
+                {
+                  "name": "where",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "GetManyArticleParams",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -5366,15 +4280,30 @@
               "deprecationReason": null
             },
             {
-              "name": "getManyEdited",
+              "name": "getManyArticleTag",
               "description": null,
-              "args": [],
+              "args": [
+                {
+                  "name": "where",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "GetManyArticleTagParams",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "EditedMany",
+                  "name": "ArticleTagMany",
                   "ofType": null
                 }
               },
@@ -5542,38 +4471,6 @@
               "deprecationReason": null
             },
             {
-              "name": "getManyEvergreen",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "EvergreenMany",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "getManyTopAuthor",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "TopAuthorMany",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "getManyEditor",
               "description": null,
               "args": [],
@@ -5635,33 +4532,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "User",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "getOneEdited",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneEditedParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Edited",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -5884,6 +4754,33 @@
               "deprecationReason": null
             },
             {
+              "name": "getOneArticleTag",
+              "description": null,
+              "args": [
+                {
+                  "name": "where",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "GetOneArticleTagParams",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ArticleTag",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "getOneFilter",
               "description": null,
               "args": [
@@ -5932,60 +4829,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Expandable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "getOneEvergreen",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneEvergreenParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Evergreen",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "getOneTopAuthor",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneTopAuthorParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "TopAuthor",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -6132,60 +4975,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Tag",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "postOneEdited",
-              "description": null,
-              "args": [
-                {
-                  "name": "data",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "PostOneEditedParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Edited",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "postOneEvergreen",
-              "description": null,
-              "args": [
-                {
-                  "name": "data",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "PostOneEvergreenParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Evergreen",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -6408,7 +5197,7 @@
               "deprecationReason": null
             },
             {
-              "name": "postOneTopAuthor",
+              "name": "postOneArticleTag",
               "description": null,
               "args": [
                 {
@@ -6419,7 +5208,7 @@
                     "name": null,
                     "ofType": {
                       "kind": "INPUT_OBJECT",
-                      "name": "PostOneTopAuthorParams",
+                      "name": "PostOneArticleTagParams",
                       "ofType": null
                     }
                   },
@@ -6428,7 +5217,7 @@
               ],
               "type": {
                 "kind": "OBJECT",
-                "name": "TopAuthor",
+                "name": "ArticleTag",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -6497,47 +5286,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "User",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "updateOneEdited",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneEditedParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "data",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "UpdateOneEditedParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Edited",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -6708,47 +5456,6 @@
               "deprecationReason": null
             },
             {
-              "name": "updateOneEvergreen",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneEvergreenParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "data",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "UpdateOneEvergreenParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Evergreen",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "updateOneExpandable",
               "description": null,
               "args": [
@@ -6784,47 +5491,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Expandable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "updateOneTopAuthor",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneTopAuthorParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "data",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "UpdateOneTopAuthorParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "TopAuthor",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -7077,6 +5743,47 @@
               "deprecationReason": null
             },
             {
+              "name": "updateOneArticleTag",
+              "description": null,
+              "args": [
+                {
+                  "name": "where",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "GetOneArticleTagParams",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                },
+                {
+                  "name": "data",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "UpdateOneArticleTagParams",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ArticleTag",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "deleteOneUser",
               "description": null,
               "args": [
@@ -7098,33 +5805,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "User",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deleteOneEdited",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneEditedParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Edited",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -7374,6 +6054,33 @@
               "deprecationReason": null
             },
             {
+              "name": "deleteOneArticleTag",
+              "description": null,
+              "args": [
+                {
+                  "name": "where",
+                  "description": null,
+                  "type": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "GetOneArticleTagParams",
+                      "ofType": null
+                    }
+                  },
+                  "defaultValue": null
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ArticleTag",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "deleteOneExpandable",
               "description": null,
               "args": [
@@ -7395,60 +6102,6 @@
               "type": {
                 "kind": "OBJECT",
                 "name": "Expandable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deleteOneEvergreen",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneEvergreenParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Evergreen",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deleteOneTopAuthor",
-              "description": null,
-              "args": [
-                {
-                  "name": "where",
-                  "description": null,
-                  "type": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "INPUT_OBJECT",
-                      "name": "GetOneTopAuthorParams",
-                      "ofType": null
-                    }
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "TopAuthor",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -7514,16 +6167,6 @@
           "kind": "SCALAR",
           "name": "Upload",
           "description": "The `Upload` scalar type represents a file upload.",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "Boolean",
-          "description": "The `Boolean` scalar type represents `true` or `false`.",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
