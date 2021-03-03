@@ -1,7 +1,0 @@
-mutation updateOneTopAuthor($where: GetOneTopAuthorParams!, $data: UpdateOneTopAuthorParams!) {
-    updateOneTopAuthor(where: $where, data: $data) {
-        id
-        created
-        url
-    }
-}

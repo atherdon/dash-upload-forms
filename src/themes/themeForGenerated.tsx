@@ -32,19 +32,24 @@ const theme: ApolloFormConfigureTheme = {
     }
   },
   fields: {
-      StringField: (p: FieldProps): any => (
-          <Input value={p.formData} error={true} onChange={
-              (e: React.SyntheticEvent<HTMLInputElement>) => p.onChange(e.currentTarget.value)
-          } />
-      ),
-      BooleanField: (p: FieldProps) => (
-          <Checkbox label={p.title} checked={p.formData} onChange={
-              (e: React.SyntheticEvent<HTMLInputElement>, data: object) => {
-                  // tslint:disable-next-line:no-any
-                  p.onChange((data as any).checked);
-              }
-          } />
-      )
+    StringField: (p: FieldProps): any => (
+        <Input value={p.formData} error={true} onChange={
+            (e: React.SyntheticEvent<HTMLInputElement>) => p.onChange(e.currentTarget.value)
+        } />
+    ),
+    BooleanField: (p: FieldProps) => (
+        <Checkbox label={p.title} checked={p.formData} onChange={
+            (e: React.SyntheticEvent<HTMLInputElement>, data: object) => {
+                // tslint:disable-next-line:no-any
+                p.onChange((data as any).checked);
+            }
+        } />
+    ),
+    DateTimeField: (p: FieldProps): any => (
+        <Input value={p.formData} error={true} onChange={
+            (e: React.SyntheticEvent<HTMLInputElement>) => p.onChange(e.currentTarget.value)
+        } />
+    ),
   },
   renderers: {
       saveButton: (p) => {     

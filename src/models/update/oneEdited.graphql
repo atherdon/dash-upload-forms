@@ -1,7 +1,0 @@
-mutation updateOneEdited($where: GetOneEditedParams!, $data: UpdateOneEditedParams!) {
-    updateOneEdited(where: $where, data: $data) {
-        id
-        created
-        url
-    }
-}
