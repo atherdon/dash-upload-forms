@@ -8,9 +8,9 @@
     "airbnb",
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/react"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -26,6 +26,7 @@
     "prettier"
   ],
   "rules": {
+    "jsx-a11y/label-has-associated-control": 0,
     "react/prop-types": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/ban-ts-comment": 0,
