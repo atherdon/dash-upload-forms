@@ -12,7 +12,7 @@
     "@types/node": "12.20.4",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.1",
-    "clsx": "^1.1.1",
+    "clsx": "1.1.1",
     "graphql": "15.5.0",
     "graphql-tag": "2.11.0",
     "graphql.macro": "1.4.2",
@@ -29,14 +29,14 @@
     "web-vitals": "1.1.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.21.1",
-    "@graphql-codegen/typescript": "^1.21.0",
-    "@graphql-codegen/typescript-operations": "^1.17.14",
-    "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "@graphql-codegen/cli": "1.21.1",
+    "@graphql-codegen/typescript": "1.21.0",
+    "@graphql-codegen/typescript-operations": "1.17.14",
+    "@graphql-codegen/typescript-react-apollo": "2.2.1",
     "@types/react-jsonschema-form": "1.7.4",
     "@types/react-router-dom": "5.1.7",
     "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-prettier": "8.1.0",
     "eslint-plugin-prettier": "3.3.1",
     "prettier": "2.2.1"
   },
