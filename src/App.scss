@@ -2,8 +2,13 @@ $margin: calc(15px + (50 - 15) * ((100vw - 320px) / (7680 - 320)));
 
 .error {
   color: red;
+  margin: 20px;
 }
 
+.success {
+  color: green;
+  margin: 20px;
+}
 .container {
   width: 100%;
   display: flex;
@@ -27,8 +32,23 @@ $margin: calc(15px + (50 - 15) * ((100vw - 320px) / (7680 - 320)));
   margin: 20px auto;
 }
 
+.desc {
+  margin: 20px 0 8px 0;
+}
+
+.field {
+  width: calc(250px + (700 - 250) * ((100vw - 320px) / (7680 - 320)));
+  margin: auto;
+}
+
+.label {
+  color: gray;
+  text-decoration: underline;
+}
+
 .button {
   margin: $margin;
+  cursor: pointer;
 }
 
 .link {
