@@ -4,20 +4,11 @@ import { ApolloProvider } from '@apollo/client';
 import { Switch, Route, Link, useHistory, withRouter } from 'react-router-dom';
 import client from './clients/apollo';
 import GeneratedForm from './components/GeneratedForm';
+import PostOneArticle from './components/PostOneArticle';
+import UpdateOneArticle from './components/UpdateOneArticle';
 import './App.scss';
 import * as s from './schema';
 
-// Article TODO rewrite to hooks
-const Article = () => (
-  <div className="form">
-    <GeneratedForm name={s.ARTICLE} document={s.articleSchema} />
-  </div>
-);
-const ArticleUpdate = () => (
-  <div className="form">
-    <GeneratedForm name={s.ARTICLE_UPDATE} document={s.articleUpdateSchema} />
-  </div>
-);
 const ArticleDelete = () => (
   <div className="form">
     <GeneratedForm name={s.ARTICLE_DELETE} document={s.articleDeleteSchema} />
@@ -407,7 +398,7 @@ function App(): React.ReactElement {
         </Menu>
         <Switch>
           {/** Post routes */}
-          <Route path={`/${s.ARTICLE}`} component={Article} />
+          <Route path={`/${s.ARTICLE}`} component={PostOneArticle} />
           <Route path={`/${s.EDITOR}`} component={Editor} />
           <Route path={`/${s.EXPANDABLE}`} component={Expandable} />
           <Route path={`/${s.APPEARANCE}`} component={Appearance} />
@@ -419,7 +410,7 @@ function App(): React.ReactElement {
           <Route path={`/${s.QUERY_S}`} component={QueryS} />
           <Route path={`/${s.PAGE}`} component={Page} />
           {/** Update routes */}
-          <Route path={`/${s.ARTICLE_UPDATE}`} component={ArticleUpdate} />
+          <Route path={`/${s.ARTICLE_UPDATE}`} component={UpdateOneArticle} />
           <Route path={`/${s.EDITOR_UPDATE}`} component={EditorUpdate} />
           <Route path={`/${s.EXPANDABLE_UPDATE}`} component={ExpandableUpdate} />
           <Route path={`/${s.APPEARANCE_UPDATE}`} component={AppearanceUpdate} />
