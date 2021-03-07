@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-use-before-define
 import React, { useEffect, useState } from 'react';
 import { ApolloProvider } from '@apollo/client';
+import { Helmet } from 'react-helmet';
 import { Switch, Route, Link, useHistory, withRouter } from 'react-router-dom';
 import client from './clients/apollo';
 import GeneratedForm from './components/GeneratedForm';
@@ -235,6 +236,9 @@ function App(): React.ReactElement {
   });
   return (
     <ApolloProvider client={client}>
+      <Helmet>
+        <title>Dash forms</title>
+      </Helmet>
       <div className="container">
         <Menu>
           <div className="row">
