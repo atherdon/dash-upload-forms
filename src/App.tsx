@@ -267,6 +267,9 @@ function App(): React.ReactElement {
               Delete
             </button>
           </div>
+          <a href="/studio" style={{ color: 'red' }} className="link" target="_blank">
+            Open Prisma Studio
+          </a>
           {tabType === 'post' ? (
             <section className="col">
               <Link className={linkCls(location, s.ARTICLE)} to={`/${s.ARTICLE}`}>
