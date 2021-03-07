@@ -1,6 +1,6 @@
 {
   "name": "dash-form",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "dependencies": {
     "@apollo/client": "3.3.11",
@@ -12,7 +12,6 @@
     "@types/node": "12.20.4",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.1",
-    "clsx": "^1.1.1",
     "express": "^4.17.1",
     "graphql": "15.5.0",
     "graphql-tag": "2.11.0",
@@ -22,6 +21,7 @@
     "react-apollo": "3.1.5",
     "react-apollo-form": "0.1.8",
     "react-dom": "17.0.1",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
     "sass": "1.32.8",
@@ -30,10 +30,11 @@
     "web-vitals": "1.1.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.21.1",
-    "@graphql-codegen/typescript": "1.21.0",
-    "@graphql-codegen/typescript-operations": "1.17.14",
-    "@graphql-codegen/typescript-react-apollo": "2.2.1",
+    "@graphql-codegen/cli": "^1.21.1",
+    "@graphql-codegen/typescript": "^1.21.0",
+    "@graphql-codegen/typescript-operations": "^1.17.14",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "@types/react-helmet": "^6.1.0",
     "@types/react-jsonschema-form": "1.7.4",
     "@types/react-router-dom": "5.1.7",
     "eslint-config-airbnb": "18.2.1",
