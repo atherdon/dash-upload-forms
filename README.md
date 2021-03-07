@@ -20,7 +20,7 @@ yarn install
 First check files `.env.development` for dev mode and `.env.production` for production.  
 ### Development
 ```
-yarn start
+yarn start:local
 ```
 ### Production
 ```
