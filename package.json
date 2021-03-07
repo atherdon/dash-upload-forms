@@ -1,6 +1,6 @@
 {
   "name": "dash-form",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "@apollo/client": "3.3.11",
@@ -12,7 +12,8 @@
     "@types/node": "12.20.4",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.1",
-    "clsx": "1.1.1",
+    "clsx": "^1.1.1",
+    "express": "^4.17.1",
     "graphql": "15.5.0",
     "graphql-tag": "2.11.0",
     "graphql.macro": "1.4.2",
@@ -41,12 +42,13 @@
     "prettier": "2.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=production node ./server.js",
+    "start:local": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --config .eslint.json",
-    "form": "react-apollo-form fetch-mutations http://localhost:4000/graphql $(pwd)/src/generatedForm",
+    "form": "react-apollo-form fetch-mutations http://localhost:5000 $(pwd)/src/generatedForm",
     "codegen": "graphql-codegen --config ./codegen.yml"
   },
   "eslintConfig": {
