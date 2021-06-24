@@ -16,7 +16,7 @@
     "graphql": "15.5.0",
     "graphql-tag": "2.12.4",
     "graphql.macro": "1.4.2",
-    "node-sass": "5.0.0",
+    "node-sass": "6.0.1",
     "react": "17.0.2",
     "react-apollo": "3.1.5",
     "react-apollo-form": "0.1.8",
