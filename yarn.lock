@@ -2648,10 +2648,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-jsonschema-form@1.7.4":
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/@types/react-jsonschema-form/-/react-jsonschema-form-1.7.4.tgz#b9dded80f830bce11a623107633b13964a143cca"
-  integrity sha512-TSsntIuB8bfheC/ZpjUmgB6+m5cLR4Gbh8rnqpSYB6T4e2TwzNICuKC5AykZI0XTxqLJmShyVsJxuo4aih64Gw==
+"@types/react-jsonschema-form@1.7.6":
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/@types/react-jsonschema-form/-/react-jsonschema-form-1.7.6.tgz#538b69e6219430c9f90af25b773bbfad35effad9"
+  integrity sha512-gkMH2ZEHH8+7EoZRhA4F2NSqO8zlcXrepMYExHRZ8nGynzBQdmp6vHryEiOSEysowVHTHCP7wLPOWhIHx3tMPg==
   dependencies:
     "@types/json-schema" "*"
     "@types/react" "*"
