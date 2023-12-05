@@ -34,7 +34,7 @@
     "@graphql-codegen/typescript": "1.22.0",
     "@graphql-codegen/typescript-operations": "1.17.16",
     "@graphql-codegen/typescript-react-apollo": "2.2.4",
-    "@types/react-helmet": "6.1.0",
+    "@types/react-helmet": "6.1.11",
     "@types/react-jsonschema-form": "1.7.4",
     "@types/react-router-dom": "5.1.7",
     "eslint-config-airbnb": "18.2.1",
